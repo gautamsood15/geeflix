@@ -28,6 +28,8 @@ function startHideTimer() {
     })
 }
 
-function initVideo() {
+function initVideo(videoId, userLoggedIn) {
     startHideTimer();
+    console.log(videoId);
+    console.log(videoId);
 }
