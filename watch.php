@@ -17,9 +17,11 @@ $video->incrementViews();
     </div>
 
 
-
-
     <video controls autoplay>
         <source src='<?php echo $video->getFilePath(); ?>' type="video/mp4">
     </video>
 </div>
+
+<script>
+    initVideo();
+</script>
