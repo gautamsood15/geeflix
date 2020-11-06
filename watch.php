@@ -8,5 +8,9 @@ if (!isset($_GET["id"])) {
 
 $video = new Video($con, $_GET["id"]);
 $video->incrementViews();
-
 ?>
+<div class="watchContainer">
+    <video controls autoplay>
+        <source src='<?php echo $video->getFilePath(); ?>' type="video/mp4">
+    </video>
+</div>
