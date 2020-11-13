@@ -1,0 +1,30 @@
+GEEFLIX is a video streaming website designed for streaming Movies, TV series and more .... 
+
+The video streaming website has a subscription model and uses PayPal payment gateway
+
+It is made up of JS, PHP, and MySql to store all the data.
+
+Xampp server is required to run the search engine
+
+Schema for database for saving all the sites data is also included below.
+
+
+List of external 3rd party CDN used --
+
+
+
+
+DB_NAME = geeflix
+
+------------------------------------------------------------------------------------------------
+
+TABLE_NAME = users
+
+1   id Primary	    int(11)		    AUTO_INCREMENT	
+2	firstName	    varchar(25)	
+3	lastName	    varchar(25)	
+4	username	    varchar(50)	
+5	email	        varchar(100)	
+6	password	    varchar(255)	
+7	signUpDate	    datetime		current_timestamp()	
+8	isSubscribed	tinyint(4)		
