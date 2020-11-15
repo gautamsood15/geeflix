@@ -16,6 +16,12 @@
 
             <div class="column">
 
+                <div class="header">
+                    <h3>Sign Up</h3>
+                    <span>to continue to Geeflix</span>
+                
+                </div>
+
                 <form method="POST">
 
                     <input type="text" name="firstName" placeholder="First Name" required>
