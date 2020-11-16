@@ -40,9 +40,9 @@
 
                     <input type="submit" name="submitButton" value="SUBMIT">
 
-
-
                 </form>
+
+                <a href="login.php" class="signInMessage">Already have an account? Sign in here!</a>
 
             </div>
 
