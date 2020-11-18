@@ -15,6 +15,7 @@ require_once("includes/classes/Account.php");
         $success = $account->login($username, $password);
 
         if($success) {
+            $_SESSION["userLoggedIn"] = $username;
             header("Location: index.php");
         }
     
