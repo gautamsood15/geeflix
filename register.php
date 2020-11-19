@@ -16,9 +16,8 @@ require_once("includes/classes/Account.php");
         $password = FormSanitizer::sanitizeFormPassword($_POST["password"]);
         $password2 = FormSanitizer::sanitizeFormPassword($_POST["password2"]);
 
-        $account->validateFirstName($firstName);
-  
-        
+        $account->register($firstName, $lastName, $username, $email, $email2, $password, $password2);
+
     }
 
 
@@ -45,9 +44,9 @@ require_once("includes/classes/Account.php");
                 <form method="POST">
 
                     <?php echo $account->getError(Constants::$firstNameCharacters); ?>
-
                     <input type="text" name="firstName" placeholder="First Name" required>
 
+                    <?php echo $account->getError(Constants::$lastNameCharacters); ?>
                     <input type="text" name="lastName" placeholder="Last Name" required>
 
                     <input type="text" name="username" placeholder="Username" required>
