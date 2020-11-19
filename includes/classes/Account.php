@@ -11,7 +11,7 @@ class Account {
 
     public function validateFirstName($fn) {
         if(strlen($fn) < 2 || strlen($fn) > 25) {
-            array_push($this->errorArray, "First name wrong length");
+            array_push($this->errorArray, Constants::$firstNameCharacters);
         }
     }
 
