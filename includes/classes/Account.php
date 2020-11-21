@@ -14,6 +14,7 @@ class Account {
         $this->validateLastName($ln);
         $this->validateUsername($un);
         $this->validateEmails($em, $em2);
+        $this->validatePasswords($pw, $pw2);
 
     }
 
@@ -63,6 +64,18 @@ class Account {
 
         if($query->rowCount() != 0) {
             array_push($this->errorArray, Constants::$emailTaken);
+        }
+    }
+
+
+    private function validatePasswords($pw, $pw2) {
+        if($pw != $pw2) {
+            array_push($this->errorArray, Constants::$passwordsDontMatch);
+            return;
+        }
+
+        if(strlen($pw) < 5 || strlen($pw) > 25) {
+            array_push($this->errorArray, Constants::$passwordLength);
         }
     }
 
