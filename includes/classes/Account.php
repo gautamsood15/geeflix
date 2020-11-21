@@ -37,6 +37,7 @@ class Account {
         $query->bindValue(":pw", $pw);
         
         return $query->execute();
+        
     }
 
     private function validateFirstName($fn) {
