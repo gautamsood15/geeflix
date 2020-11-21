@@ -48,7 +48,6 @@ TABLE_NAME = videos
 12 	entityId	    int(11)         Index 
 
 
-
 TABLE_NAME = entities
 
 
