@@ -14,14 +14,26 @@ class PreviewProvider {
             $entity = $this->getRandomEntity();
         }
 
+
+        $id = $entity->getId();
+        $name = $entity->getName();
+        $preview = $entity->getPreview();
+        $thumbnail = $entity->getThumbnail();
+
+
+        echo "<img src='$thumbnail'>";
+        
+
     }
 
     private function getRandomEntity() {
-        $query = $this->con->prepare("SELECT * FROM entities ORDER bY RAND() LIMIT 1");
+
+        $query = $this->con->prepare("SELECT * FROM entities ORDER BY RAND() LIMIT 1");
         $query->execute();
 
         $row = $query->fetch(PDO::FETCH_ASSOC);
-        echo $row["name"];
+
+        return new Entity($this->con, $row);
     }
 }
 
