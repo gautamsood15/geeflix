@@ -12,6 +12,18 @@ body {
 
 }
 
+h3 {
+    color: #e5e5e5;
+}
+
+a h3:hover {
+    color: #fff;
+}
+
+a {
+    text-decoration: none;
+}
+
 .wrapper {
     min-width: 1050px;
     min-height: 100%;
@@ -166,4 +178,16 @@ button i {
 .mainDetails button:hover {
     background-color: #e6e6e6;
     color: #000;
+}
+
+.category {
+    display: flex;
+    flex-direction: column;
+    padding: 10px 0;
+}
+
+.entities {
+    overflow-x: auto;
+    overflow-y: hidden;
+    white-space: nowrap;
 }
