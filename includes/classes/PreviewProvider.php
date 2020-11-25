@@ -22,15 +22,19 @@ class PreviewProvider {
 
         return "<div class='previewContainer'>
 
-                <img src='$thumbnail' class='previewImage' hidden>
+                    <img src='$thumbnail' class='previewImage' hidden>
 
-                <video autoplay muted class='previewVideo'>
-                    <source src='$preview' type='video/mp4'>
-                </video>
+                    <video autoplay muted class='previewVideo'>
+                        <source src='$preview' type='video/mp4'>
+                    </video>
 
-                <div class='previewOverlay'>
-                    hello
-                </div>
+                    <div class='previewOverlay'>
+
+                        <div class='mainDetails'>
+                            <h3>$name</h3>
+                        </div>
+
+                    </div>
         
                 </div>";
 
