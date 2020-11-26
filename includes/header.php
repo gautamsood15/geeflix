@@ -15,6 +15,7 @@ $userLoggedIn = $_SESSION["userLoggedIn"];
     <head>
         <title>Welcome to Geeflix</title>
         <link rel="stylesheet" type="text/css" href="assets/style/style.css" />
+        <script src="https://kit.fontawesome.com/7afe204f7c.js" crossorigin="anonymous"></script>
     </head>
     <body>
         <div class='wrapper'>

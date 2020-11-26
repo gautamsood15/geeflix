@@ -11,6 +11,7 @@ Schema for database for saving all the sites data is also included below.
 
 List of external 3rd party CDN used --
 
+1 Font Awesome
 
 
 
