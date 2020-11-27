@@ -12,6 +12,12 @@ body {
 
 }
 
+.wrapper {
+    min-width: 1050px;
+    min-height: 100%;
+    background-color: #141414;
+}
+
 .signInContainer {
     background-color: #efefee;
     height: 100vh;
