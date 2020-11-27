@@ -38,6 +38,16 @@ class Entity {
         $query = $this->con->prepare("SELECT * FROM videos WHERE entityId=:id AND isMovie=0 ORDER BY season, episode ASC");
         $query->bindValue(":id", $entity->getId());
         $query->execute();
+
+        $seasons = array();
+        $videos = array();
+        $currentSeason = null;
+        while ($row = $query->fetch(PDO::FETCH_ASSOC)) {
+            
+            
+            $currentSeason = $row["season"];
+            $videos[] = new Video($this->con, $row);
+        }
     }
 
 }
