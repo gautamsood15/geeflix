@@ -66,6 +66,15 @@ TABLE_NAME = categories
 2 	name 	        varchar(50) 	latin1_swedish_ci 	
 
 
+TABLE_NAME = videoProgress
+
+
+1	id Primary	    int(11)			AUTO_INCREMENT	
+2	username	    varchar(50)     utf8mb4_general_ci		
+3	videoId	        int(11)		
+4	progress	    int(11)			
+5	finished	    tinyint(4)			
+6	dateModified	datetime        current_timestamp()			
 
 
 

@@ -28,7 +28,6 @@ function startHideTimer() {
     })
 }
 
-
 function initVideo() {
     startHideTimer();
 }
