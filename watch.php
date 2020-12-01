@@ -20,7 +20,7 @@ $upNextVideo = VideoProvider::getUpNext($con, $video);
 
     <div class="videoControls upNext">
 
-        <button><i class="fas fa-redo"></i></button>
+        <button onclick="restartVideo();"><i class="fas fa-redo"></i></button>
 
         <div class="upNextContainer">
             <h2>Up Next:</h2>
