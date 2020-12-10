@@ -8,6 +8,10 @@ class PreviewProvider {
         $this->username = $username;
     }
 
+    public function createTVShowPreviewVideo() {
+        
+    }
+
     public function createPreviewVideo($entity) {
         
         if($entity == null) {
