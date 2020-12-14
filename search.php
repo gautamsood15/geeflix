@@ -10,18 +10,28 @@ include_once("includes/header.php");
 
 <script>
 
-    $(function() {
-        var username = '<?php echo $userLoggedIn; ?>';
-        var timer;
+$(function() {
+    
+    var username = '<?php echo $userLoggedIn; ?>';
+    var timer;
 
-        $(".searchInput").keyup(function() {
-            clearTimeout(timer);
+    $(".searchInput").keyup(function() {
+        clearTimeout(timer);
 
-            timer = setTimeout(function() {
-                var val = $(".searchInput").val();
-                console.log(val);
-            }, 500);
-        })
+        timer = setTimeout(function() {
+            var val = $(".searchInput").val();
+            
+            if (val != "") {
+                $.post("ajax/getSearchResults.php", { term: val, username:username }, function(data) {
+                    $(".results").html(data);
+                })
+            }
+            else {
+                $(".results").html("");
+            }
+
+        }, 500);
     })
+})
 
 </script>
