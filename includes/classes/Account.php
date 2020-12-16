@@ -16,8 +16,14 @@ class Account {
         $this->validateNewEmail($em, $un);
 
         if (empty($this->errorArray)) {
-            // update data
-            return true;
+            $query = $this->con->prepare("UPDATE users SET firstName=:fn, lastName=:ln, email=:em WHERE username=:un");
+
+            $query->bindValue(":fn", $fn);
+            $query->bindValue(":fn", $ln);
+            $query->bindValue(":fn", $em);
+            $query->bindValue(":fn", $un);
+
+            return $query->execute();
         }
 
         return false;
