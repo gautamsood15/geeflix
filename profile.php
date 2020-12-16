@@ -1,5 +1,14 @@
 <?php
 require_once("includes/header.php");
+
+if (isset($_POST["saveDetailsButton"])) {
+    $account = new Account($con);
+
+    $firstName = FormSanitizer::sanitizeFormString($_POST["firstName"]);
+    $lastName = FormSanitizer::sanitizeFormString($_POST["lastName"]);
+    $email = FormSanitizer::sanitizeFormEmail($_POST["email"]);
+}
+
 ?>
 
 <div class="settingsContainer column">
