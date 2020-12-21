@@ -19,9 +19,9 @@ class Account {
             $query = $this->con->prepare("UPDATE users SET firstName=:fn, lastName=:ln, email=:em WHERE username=:un");
 
             $query->bindValue(":fn", $fn);
-            $query->bindValue(":fn", $ln);
-            $query->bindValue(":fn", $em);
-            $query->bindValue(":fn", $un);
+            $query->bindValue(":ln", $ln);
+            $query->bindValue(":em", $em);
+            $query->bindValue(":un", $un);
 
             return $query->execute();
         }
@@ -165,6 +165,12 @@ class Account {
             return "<span class='errorMessage'>$error</span>";
         }
 
+    }
+
+    public function getFirstError() {
+        if (!empty($this->errorArray)) {
+            return $this->errorArray[0];
+        }
     }
 }
 ?>
