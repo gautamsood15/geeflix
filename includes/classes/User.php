@@ -24,6 +24,11 @@ class User {
         return $this->sqlData["email"];
     }
 
+    public function getIsSubscribed() {
+        // return $this->sqlData["isSubscribed"];
+        return true;
+    }
+
 }
 
 ?>
