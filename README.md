@@ -19,6 +19,26 @@ DB_NAME = geeflix
 
 ------------------------------------------------------------------------------------------------
 
+TABLE_NAME = billingDetails
+
+
+1	id Primary	    int(11)         AUTO_INCREMENT	
+2	agreementId	    varchar(200)
+3	nextBillingDate	varchar(50)
+4	token	        varchar(50)	
+5	username	    varchar(50)
+
+
+
+
+
+
+
+
+
+
+
+
 TABLE_NAME = users
 
 1   id Primary	    int(11)		    AUTO_INCREMENT	
