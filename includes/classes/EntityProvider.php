@@ -31,8 +31,8 @@ class EntityProvider {
     public static function getTVShowEntities($con, $categoryId, $limit) {
 
         $sql = "SELECT DISTINCT(entities.id) FROM `entities` 
-                INNER JOIN videos ON entities.id = videos.entityId
-                WHERE videos.isMovie = 0";
+                INNER JOIN videos ON entities.id = videos.entityId 
+                WHERE videos.isMovie = 0 ";
 
         if($categoryId != null) {
             $sql .= "AND categoryId=:categoryId ";
@@ -57,11 +57,10 @@ class EntityProvider {
         return $result;
     }
 
-
     public static function getMoviesEntities($con, $categoryId, $limit) {
 
         $sql = "SELECT DISTINCT(entities.id) FROM `entities` 
-                INNER JOIN videos ON entities.id = videos.entityId
+                INNER JOIN videos ON entities.id = videos.entityId 
                 WHERE videos.isMovie = 1 ";
 
         if($categoryId != null) {
@@ -87,13 +86,10 @@ class EntityProvider {
         return $result;
     }
 
-
-
     public static function getSearchEntities($con, $term) {
 
-        $sql = "SELECT * FROM  entities WHERE name LIKE CONCAT('%', :term, '%') LIMIT 30";
+        $sql = "SELECT * FROM entities WHERE name LIKE CONCAT('%', :term, '%') LIMIT 30";
 
-        
         $query = $con->prepare($sql);
 
         $query->bindValue(":term", $term);

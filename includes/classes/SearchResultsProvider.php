@@ -11,21 +11,21 @@ class SearchResultsProvider {
     public function getResults($inputText) {
         $entities = EntityProvider::getSearchEntities($this->con, $inputText);
 
-        $html = "<div class='previewCategories no Scroll'>";
+        $html = "<div class='previewCategories noScroll'>";
 
         $html .= $this->getResultHtml($entities);
 
         return $html . "</div>";
     }
 
-    private function getresultHtml($entities) {
-        if (sizeof($entities) == 0) {
+    private function getResultHtml($entities) {
+        if(sizeof($entities) == 0) {
             return;
         }
 
         $entitiesHtml = "";
-        $previewProvider =  new PreviewProvider($this->con, $this->username);
-        foreach ($entities as $entity) {
+        $previewProvider = new PreviewProvider($this->con, $this->username);
+        foreach($entities as $entity) {
             $entitiesHtml .= $previewProvider->createEntityPreviewSquare($entity);
         }
 
@@ -36,6 +36,4 @@ class SearchResultsProvider {
                 </div>";
     }
 }
-
-
 ?>
