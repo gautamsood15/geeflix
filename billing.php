@@ -13,7 +13,7 @@ use PayPal\Api\ShippingAddress;
 // Create new agreement
 $agreement = new Agreement();
 $agreement->setName('Subscription to Geeflix')
-  ->setDescription('Recurring payments to Geeflix')
+  ->setDescription('Recurring payments of 500 to Geeflix')
   ->setStartDate(gmdate("Y-m-d\TH:i:s\Z", strtotime("+7 days", time())));
 
 // Set plan id
