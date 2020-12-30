@@ -4,7 +4,6 @@ require_once("billingPlan.php");
 
 $id = $plan->getId();
 
-
 use PayPal\Api\Agreement;
 use PayPal\Api\Payer;
 use PayPal\Api\Plan;
@@ -13,8 +12,8 @@ use PayPal\Api\ShippingAddress;
 // Create new agreement
 $agreement = new Agreement();
 $agreement->setName('Subscription to Geeflix')
-  ->setDescription('Recurring payments of 500 to Geeflix')
-  ->setStartDate(gmdate("Y-m-d\TH:i:s\Z", strtotime("+7 days", time())));
+  ->setDescription('£9.99 setup fee and then recurring payments of £9.99 to Geeflix')
+  ->setStartDate(gmdate("Y-m-d\TH:i:s\Z", strtotime("+1 month", time())));
 
 // Set plan id
 $plan = new Plan();

@@ -11,7 +11,7 @@ use PayPal\Common\PayPalModel;
 
 // Create a new billing plan
 $plan = new Plan();
-$plan->setName('Reecflix monthly subscription')
+$plan->setName('Geeflix monthly subscription')
   ->setDescription('Gets you all the features of our site.')
   ->setType('INFINITE');
 
@@ -32,7 +32,8 @@ $merchantPreferences->setReturnUrl($returnUrl . "?success=true")
   ->setCancelUrl($returnUrl . "?success=false")
   ->setAutoBillAmount('yes')
   ->setInitialFailAmountAction('CONTINUE')
-  ->setMaxFailAttempts('0');
+  ->setMaxFailAttempts('0')
+  ->setSetupFee(new Currency(array('value' => 9.99, 'currency' => 'GBP')));
 
 $plan->setPaymentDefinitions(array($paymentDefinition));
 $plan->setMerchantPreferences($merchantPreferences);
@@ -68,4 +69,4 @@ try {
   } catch (Exception $ex) {
     die($ex);
   }
-?>
+?>  
